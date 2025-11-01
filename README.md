@@ -123,6 +123,106 @@ drwxrwxr-x 2 ubuntu ubuntu 4096 Nov  1 22:57 devops
 
 ---
 
+## 📄 8. `cd`
+
+```bash
+ubuntu@ip-172-31-3-73:~$ cd devops
+```
+
+**Description:**  
+Used to change directory
+
+✅ **After changing directory:**
+```bash
+ubuntu@ip-172-31-3-73:~/devops$ pwd
+/home/ubuntu/devops
+```
+
+---
+
+## 📄 9. `cd ..`
+
+```bash
+ubuntu@ip-172-31-3-73:~$ cd ..
+```
+
+**Description:**  
+Used to come one step out of the directory
+
+✅ **After changing directory:**
+```bash
+ubuntu@ip-172-31-3-73:~$ pwd
+/home/ubuntu
+```
+
+---
+
+## 📄 10. `rm`
+
+```bash
+ubuntu@ip-172-31-3-73:~/devops$ touch devops_file.txt
+ubuntu@ip-172-31-3-73:~/devops$ ls
+devops_file.txt
+```
+
+**Description:**  
+Used to remove a file from the directory directory
+
+✅ **After deleting file:**
+```bash
+ubuntu@ip-172-31-3-73:~/devops$ rm devops_file.txt
+ubuntu@ip-172-31-3-73:~/devops$ ls
+ubuntu@ip-172-31-3-73:~/devops$
+```
+---
+
+## 📄 11. `rm -r`
+
+```bash
+ubuntu@ip-172-31-3-73:~$ ls
+cloud  devops  newfile.txt
+ubuntu@ip-172-31-3-73:~$ rm -r cloud
+```
+
+**Description:**  
+Used to recursively delete the contents of a directory and then the directory itself
+
+✅ **After deleting directory:**
+```bash
+rmdir folder_name
+
+```
+---
+
+## 📄 12. `rmdir
+
+```bash
+rmdir folder_name
+```
+
+**Description:**  
+Used to remove only empty directories
+
+
+## 📄 13. `rm -r`
+
+```bash
+ubuntu@ip-172-31-3-73:~$ ls
+cloud  devops  newfile.txt
+ubuntu@ip-172-31-3-73:~$ rm -r cloud
+```
+---
+
+
+**Description:**  
+Used to recursively delete the contents of a directory and then the directory itself
+
+✅ **After deleting directory:**
+```bash
+rmdir folder_name
+
+```
+---
 
 
 ### ✅ **Conclusion**
