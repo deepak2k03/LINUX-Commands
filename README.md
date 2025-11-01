@@ -204,27 +204,33 @@ rmdir folder_name
 Used to remove only empty directories
 
 
-## 📄 13. `rm -r`
 
+## 🖊️ 9. `echo` and `cat` Commands
+
+### `touch demo.txt`
 ```bash
-ubuntu@ip-172-31-3-73:~$ ls
-cloud  devops  newfile.txt
-ubuntu@ip-172-31-3-73:~$ rm -r cloud
+ubuntu@ip-172-31-3-73:~$ touch demo.txt
 ```
----
+Creates an **empty file** named `demo.txt`.
 
-
-**Description:**  
-Used to recursively delete the contents of a directory and then the directory itself
-
-✅ **After deleting directory:**
+### `echo`
 ```bash
-rmdir folder_name
-
+ubuntu@ip-172-31-3-73:~$ echo "hello deepak"
+hello deepak
 ```
+Prints text to the terminal.
+
+### Redirecting Output using `>`
+```bash
+ubuntu@ip-172-31-3-73:~$ echo "hello deepak" > demo.txt
+```
+The `>` operator redirects output into a file (creates or overwrites it).
+
+### `cat`
+```bash
+ubuntu@ip-172-31-3-73:~$ cat demo.txt
+hello deepak
+```
+Displays file contents or merges multiple files.
+
 ---
-
-
-### ✅ **Conclusion**
-These are some of the **most basic and essential Linux commands**.  
-They help you **navigate, create, and manage files and folders** directly from the terminal — a fundamental skill for any Linux user or DevOps learner.
