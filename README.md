@@ -205,7 +205,7 @@ Used to remove only empty directories
 
 
 
-## 🖊️ 9. `echo` and `cat` Commands
+## 🖊️ 13. `echo` and `cat` Commands
 
 ### `touch demo.txt`
 ```bash
