@@ -103,7 +103,7 @@ devops  newfile.txt
 
 ---
 
-## 📦 7. `mkdir cloud`
+## 📦 7. `mkdir`
 
 ```bash
 ubuntu@ip-172-31-3-73:~$ mkdir cloud
