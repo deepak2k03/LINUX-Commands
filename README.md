@@ -253,6 +253,232 @@ Enhanced version of `vi` with syntax highlighting, plugins, and better navigatio
 
 ---
 
-✅ **End of Document**  
-This guide covers all fundamental Linux commands essential for beginners.  
-Practice them regularly to build confidence in the command line.  
+# 🐧 Essential Linux System Commands – Explained with Examples
+
+This README covers commonly used **Linux system administration commands** used for connecting to servers, monitoring system performance, and managing processes.  
+
+---
+
+## 🔐 1. `ssh` — Secure Shell Login
+
+**Purpose:**  
+Connects securely to a remote machine (like an AWS EC2 instance) over a network.
+
+**Syntax:**
+```bash
+ssh -i "your-key.pem" username@public-ip
+```
+
+**Example:**
+```bash
+ssh -i "linux-for-devops-key.pem" ubuntu@13.233.101.24
+```
+
+**Explanation:**
+- `-i` → path to your private key file.  
+- `username` → depends on OS (`ubuntu`, `ec2-user`, etc.)  
+- `public-ip` → EC2 instance IP address.  
+
+---
+
+## 💾 2. `df` — Disk Filesystem Usage
+
+**Purpose:**  
+Displays information about disk space usage of mounted file systems.
+
+**Syntax:**
+```bash
+df -h
+```
+
+**Example Output:**
+```
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/xvda1       20G   15G  4.2G  78% /
+```
+
+**Options:**
+- `-h` → human-readable (MB/GB units).
+
+---
+
+## 📦 3. `du` — Disk Usage
+
+**Purpose:**  
+Shows how much disk space files or directories are using.
+
+**Syntax:**
+```bash
+du -sh /var/log
+```
+
+**Explanation:**
+- `-s` → summary of total size  
+- `-h` → human-readable format  
+
+---
+
+## 🧠 4. `ps` — Process Status
+
+**Purpose:**  
+Displays currently running processes.
+
+**Syntax:**
+```bash
+ps aux
+```
+
+**Output Example:**
+```
+USER       PID %CPU %MEM COMMAND
+root         1  0.0  0.2 /sbin/init
+ubuntu     452  0.3  1.1 /usr/bin/python3
+```
+
+**Options:**
+- `a` → all users  
+- `u` → show user details  
+- `x` → include processes not attached to a terminal  
+
+---
+
+## 📊 5. `top` — Real-Time Process Monitoring
+
+**Purpose:**  
+Displays a dynamic, real-time view of system processes and resource usage.
+
+**Usage:**
+```bash
+top
+```
+
+**Keys:**
+- `q` → quit  
+- `k` → kill a process  
+- `M` → sort by memory  
+- `P` → sort by CPU  
+
+---
+
+## 🔍 6. `fuser` — Identify Processes Using a File
+
+**Purpose:**  
+Shows which processes are accessing a specific file, directory, or port.
+
+**Syntax:**
+```bash
+fuser /var/log/syslog
+```
+
+**Example:**
+```bash
+fuser -v /dev/sda1
+```
+
+**Options:**
+- `-v` → verbose mode  
+- `-k` → kill all processes using that file  
+
+---
+
+## ⚔️ 7. `kill` — Terminate a Process
+
+**Purpose:**  
+Sends a signal to terminate a process by its Process ID (PID).
+
+**Syntax:**
+```bash
+kill <pid>
+```
+
+**Example:**
+```bash
+kill 1234
+```
+
+**Force kill:**
+```bash
+kill -9 1234
+```
+
+**Explanation:**  
+`-9` sends the SIGKILL signal, forcing immediate termination.
+
+---
+
+## 🔁 8. `nohup` — Run Commands That Ignore Hangups
+
+**Purpose:**  
+Runs a command immune to hangups (e.g., when you close your terminal).
+
+**Syntax:**
+```bash
+nohup command > output.log 2>&1 &
+```
+
+**Example:**
+```bash
+nohup python3 app.py > app.log 2>&1 &
+```
+
+**Explanation:**
+- `nohup` → ignore hangup signals  
+- `> app.log` → redirect output  
+- `2>&1` → redirect errors too  
+- `&` → run in background  
+
+---
+
+## 🧮 9. `free` — Memory Usage
+
+**Purpose:**  
+Displays amount of free and used memory in the system.
+
+**Syntax:**
+```bash
+free -h
+```
+
+**Example Output:**
+```
+              total        used        free      shared  buff/cache   available
+Mem:           1.9G        987M        654M         31M        278M        743M
+Swap:            0B          0B          0B
+```
+
+---
+
+## ⚙️ 10. `vmstat` — Virtual Memory Statistics
+
+**Purpose:**  
+Reports information about processes, memory, paging, block IO, and CPU activity.
+
+**Syntax:**
+```bash
+vmstat 2 5
+```
+
+**Explanation:**
+- The above runs every **2 seconds**, **5 times**.  
+
+**Output Columns:**
+- `procs` → process status  
+- `memory` → swap and free memory  
+- `cpu` → usage breakdown (user/system/idle)  
+
+---
+
+### 🧾 Summary
+
+| Command | Purpose |
+|----------|----------|
+| ssh | Securely connect to remote systems |
+| df | Show disk space usage |
+| du | Show directory size usage |
+| ps | List active processes |
+| top | Monitor system processes |
+| fuser | Identify which process is using a file/port |
+| kill | Terminate processes |
+| nohup | Run long jobs immune to terminal close |
+| free | Display RAM usage |
+| vmstat | System performance overview |
