@@ -429,3 +429,78 @@ diff [file1] [file2]
 diff file1.txt file2.txt
 ```
 Output lines starting with `<` are from the first file, and those with `>` are from the second file.
+---
+## 🖋️ `vi` and `vim` Editors
+
+### **1. `vi` — Visual Editor**
+**Description:**  
+`vi` (Visual Editor) is a built-in text editor in almost all Linux systems.  
+It allows you to **create, edit, and save text files directly from the terminal**.
+
+**Usage:**
+```bash
+vi [filename]
+```
+**Examples:**
+```bash
+vi notes.txt     # Opens or creates 'notes.txt' in vi editor
+```
+
+---
+
+### **2. `vim` — Vi Improved**
+**Description:**  
+`vim` stands for **Vi IMproved**, an enhanced version of `vi` with features like:
+- Syntax highlighting  
+- Undo/Redo support  
+- Line numbers  
+- Better navigation and configuration options  
+
+**Usage:**
+```bash
+vim [filename]
+```
+**Examples:**
+```bash
+vim code.c
+```
+
+---
+
+### **3. Modes in `vi` / `vim`**
+
+| Mode | Description |
+|------|--------------|
+| **Command Mode** | Default mode when you open a file. Used for navigation and commands (delete, copy, paste). |
+| **Insert Mode** | Used to type or edit text. Enter this mode by pressing `i`, `a`, or `o`. |
+| **Visual Mode** | Used to select text visually for copying, cutting, or formatting. Enter using `v`. |
+| **Ex Mode** | Used to execute commands (like saving or quitting) by pressing `:`. |
+
+---
+
+### **4. Common `vi` / `vim` Commands**
+
+| Action | Command |
+|---------|----------|
+| Enter Insert mode | `i` |
+| Save file | `:w` |
+| Quit editor | `:q` |
+| Save and quit | `:wq` or `:x` |
+| Quit without saving | `:q!` |
+| Delete a line | `dd` |
+| Copy a line | `yy` |
+| Paste | `p` |
+| Undo last change | `u` |
+| Redo change | `Ctrl + r` |
+| Search for a word | `/word` |
+| Show line numbers | `:set number` |
+| Go to a specific line | `:10` (goes to line 10) |
+
+---
+
+### **5. Exiting `vi` / `vim`**
+If you’re stuck and can’t exit:
+1. Press `Esc` to ensure you’re in **Command Mode**.  
+2. Then type:
+   - `:wq` → Save and quit  
+   - `:q!` → Quit without saving  
