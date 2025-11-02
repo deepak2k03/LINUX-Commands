@@ -234,3 +234,198 @@ hello deepak
 Displays file contents or merges multiple files.
 
 ---
+## 14. `head` — Display Beginning of File
+**Description:**  
+Shows the first few lines (default: 10) of a file.
+
+**Usage:**
+```bash
+head [filename]
+```
+**Examples:**
+```bash
+head file.txt
+head -n 5 file.txt    # Show first 5 lines
+```
+
+---
+
+## 15. `tail` — Display End of File
+**Description:**  
+Shows the last few lines (default: 10) of a file.
+
+**Usage:**
+```bash
+tail [filename]
+```
+**Examples:**
+```bash
+tail file.txt
+tail -n 20 file.txt   # Show last 20 lines
+tail -f log.txt       # Monitor file in real-time
+```
+
+---
+
+## 16. `less` — View File with Navigation
+**Description:**  
+Opens a file for viewing with scroll capability.
+
+**Usage:**
+```bash
+less [filename]
+```
+**Examples:**
+```bash
+less file.txt
+```
+**Navigation Keys:**
+- `Space` → Next page  
+- `b` → Previous page  
+- `/word` → Search for “word”  
+- `q` → Quit viewer
+
+---
+
+## 17. `more` — View File Page by Page
+**Description:**  
+Displays text one screen at a time.
+
+**Usage:**
+```bash
+more [filename]
+```
+**Examples:**
+```bash
+more file.txt
+```
+
+---
+
+## 18. `mv` — Move or Rename Files
+**Description:**  
+Moves or renames files and directories.
+
+**Usage:**
+```bash
+mv [source] [destination]
+```
+**Examples:**
+```bash
+mv file.txt /home/user/Documents/       # Move file to Documents folder
+mv oldname.txt newname.txt              # Rename a file
+```
+
+---
+
+## 19. `wc` — Word Count
+**Description:**  
+Displays the number of lines, words, and characters in a file.
+
+**Usage:**
+```bash
+wc [options] [filename]
+```
+**Examples:**
+```bash
+wc file.txt         # Displays lines, words, and characters
+wc -l file.txt      # Displays only line count
+wc -w file.txt      # Displays only word count
+```
+
+---
+
+## 20. Hard Link
+**Description:**  
+A hard link is another name for an existing file. Both names point to the same data on the disk.  
+Deleting one does **not** remove the data until all hard links are deleted.
+
+**Usage:**
+```bash
+ln [existing_file] [link_name]
+```
+**Example:**
+```bash
+ln file1.txt file2.txt
+```
+
+---
+
+## 21. Soft Link (Symbolic Link)
+**Description:**  
+A soft link (symbolic link) points to another file by its path.  
+If the target file is deleted, the soft link becomes broken.
+
+**Usage:**
+```bash
+ln -s [target_file] [link_name]
+```
+**Example:**
+```bash
+ln -s /home/user/file.txt link_to_file.txt
+```
+
+---
+
+## 22. `cut` — Extract Columns from Text
+**Description:**  
+Extracts specific sections or columns from each line of a file.
+
+**Usage:**
+```bash
+cut [options] [filename]
+```
+**Examples:**
+```bash
+cut -d',' -f1 file.csv   # Extract first column from CSV
+cut -c1-5 file.txt       # Extract first 5 characters from each line
+```
+
+---
+
+## 23. `tee` — Output to File and Screen Simultaneously
+**Description:**  
+Reads from standard input and writes to both standard output and files.
+
+**Usage:**
+```bash
+command | tee [file]
+```
+**Examples:**
+```bash
+echo "Hello" | tee hello.txt       # Save and display output
+ls | tee list.txt                  # Save list of files to a file
+```
+
+---
+
+## 24. `sort` — Sort Lines of Text Files
+**Description:**  
+Sorts lines alphabetically or numerically.
+
+**Usage:**
+```bash
+sort [options] [filename]
+```
+**Examples:**
+```bash
+sort file.txt              # Sort alphabetically
+sort -r file.txt           # Sort in reverse order
+sort -n numbers.txt        # Sort numerically
+```
+
+---
+
+## 25. `diff` — Compare Files Line by Line
+**Description:**  
+Shows the differences between two files.
+
+**Usage:**
+```bash
+diff [file1] [file2]
+```
+**Examples:**
+```bash
+diff file1.txt file2.txt
+```
+Output lines starting with `<` are from the first file, and those with `>` are from the second file.
